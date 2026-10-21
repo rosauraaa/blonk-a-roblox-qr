@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <title>Bonk-a-Blox AR</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+      "mindar-image-three": "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-three.prod.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="ar"></div>
+
+  <!-- HUD -->
+  <div id="hud" hidden>
+    <div class="pill" id="score">0</div>
+    <div class="pill" id="time">45</div>
+    <div class="pill" id="lives">❤️❤️❤️</div>
+  </div>
+  <div id="combo" hidden></div>
+
+  <!-- Botones 1-2-3 (mismos colores que los hoyos de la isla) -->
+  <div id="pads" hidden>
+    <button class="pad" data-hole="0" style="--c:#ff3b3b">1</button>
+    <button class="pad" data-hole="1" style="--c:#2f80ff">2</button>
+    <button class="pad" data-hole="2" style="--c:#ffc93c">3</button>
+  </div>
+
+  <div id="hint" hidden>📷 Apunta la cámara al marcador QR</div>
+
+  <!-- Pantallas -->
+  <section class="screen" id="intro">
+    <h1>BONK-A-BLOX</h1>
+    <p class="sub">Juego de Realidad Aumentada</p>
+    <ol>
+      <li>Imprime o abre el <a href="assets/marker/marker.png" target="_blank">marcador QR</a> en otra pantalla.</li>
+      <li>Apunta la cámara al marcador: aparece una isla con 3 hoyos.</li>
+      <li>Cuando salga un bloxy, <b>tócalo</b> o presiona el botón de su color: <b>+10</b>.</li>
+      <li>Golpes seguidos suben el <b>combo</b> (x2, x3…).</li>
+      <li>¡No golpees la <b>TNT</b>! Pierdes un corazón.</li>
+      <li>La partida dura <b>45 s</b> o hasta perder los 3 corazones.</li>
+    </ol>
+    <button class="big" id="play" disabled>¡JUGAR!</button>
+    <p class="status" id="status">Cargando cámara y modelos…</p>
+  </section>
+
+  <section class="screen" id="over" hidden>
+    <h1 id="over-title">¡SE ACABÓ!</h1>
+    <div class="final" id="final-score">0</div>
+    <p id="final-stats"></p>
+    <p id="best"></p>
+    <button class="big" id="again">JUGAR OTRA VEZ</button>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
