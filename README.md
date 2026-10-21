@@ -46,7 +46,7 @@ La dificultad sube durante la partida: los personajes salen más seguido, duran 
 ![Marcador](assets/marker/marker.png)
 
 - El QR apunta a la página del juego: si lo escaneas con la cámara normal del teléfono, se abre el juego, y el juego usa la **misma imagen** como marcador.
-- Un QR solo tiene patrones repetitivos que confunden al rastreador. Por eso lleva un **marco de bloques de colores distinto en cada lado**, un título, una carita pixel-art, un martillo y círculos de colores en posiciones asimétricas. Así el rastreador tiene puntos únicos y lo detecta rápido a distintas distancias.
+- Un QR solo tiene patrones repetitivos que confunden al rastreador. Por eso el QR va dentro de un **cartel**: un render de Blender de la isla con los personajes, la TNT y el martillo ([`blender/render_marker_art.py`](blender/render_marker_art.py)), un título de letras de colores, instrucciones, nubes, confeti y un marco de bloques que cambia en cada lado. Así el rastreador tiene puntos únicos y lo detecta rápido a distintas distancias.
 - Alto contraste (negro sobre blanco) y nivel de corrección de errores **H**, para que el QR siga funcionando aunque se le agregue diseño.
 - `assets/marker/marker.mind` es el marcador compilado para MindAR ([`tools/compile-marker.html`](tools/compile-marker.html)).
 
@@ -82,6 +82,7 @@ Settings → Pages → *Deploy from a branch* → `main` / `(root)`.
 ### Regenerar los recursos (opcional)
 ```bash
 blender -b -P blender/build_models.py        # modelos y docs/preview-modelos.png
+blender -b -P blender/render_marker_art.py   # ilustración del cartel
 pip install qrcode pillow
 python tools/make_marker.py [url]            # marcador nuevo
 npx serve .  →  abrir /tools/compile-marker.html y guardar marker.mind en assets/marker/
