@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Compilar marcador</title>
+<style>body{font-family:system-ui,sans-serif;margin:24px}#log{white-space:pre}</style>
+</head>
+<body>
+<h1>Compilar marcador para MindAR</h1>
+<p>Abre esta página con un servidor local (<code>npx serve</code> en la raíz del repo), espera a que termine
+y descarga <code>marker.mind</code>. Guárdalo en <code>assets/marker/</code>.</p>
+<div id="log">Compilando…</div>
+<script type="module">
+import { Compiler } from "https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image.prod.js";
+
+const log = document.getElementById("log");
+const img = new Image();
+img.src = "../assets/marker/marker.png";
+await img.decode();
+
+const compiler = new Compiler();
+await compiler.compileImageTargets([img], (p) => (log.textContent = `Compilando… ${p.toFixed(0)}%`));
+const data = await compiler.exportData();
+
+const blob = new Blob([data]);
+const a = document.createElement("a");
+a.href = URL.createObjectURL(blob);
+a.download = "marker.mind";
+a.textContent = "Descargar marker.mind";
+log.textContent = `Listo (${data.byteLength} bytes). `;
+log.append(a);
+
+// para automatizar la compilación desde un script
+let bin = "";
+for (const b of data) bin += String.fromCharCode(b);
+window.markerBase64 = btoa(bin);
+</script>
+</body>
+</html>
