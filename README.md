@@ -4,7 +4,7 @@ Minijuego de **Realidad Aumentada** que se activa con un **marcador QR de diseñ
 
 > Actividad 1 · Realidad Virtual y Aumentada: Juego de RA activado por marcador QR personalizado.
 
-**▶ Jugar:** https://rosauraaa.github.io/bonk-a-blox-qr/
+**▶ Jugar:** https://rosauraaa.github.io/blonk-a-roblox-qr/
 **🎥 Video demo:** _(agregar enlace al video de 30–60 s)_
 **🖨 Marcador:** [`assets/marker/marker.png`](assets/marker/marker.png)
 
@@ -68,7 +68,7 @@ docs/                   capturas y artículo
 
 No hay que compilar nada: es una página estática.
 
-1. **En el teléfono (recomendado):** abre https://rosauraaa.github.io/bonk-a-blox-qr/ (o escanea el QR) y permite el uso de la cámara. Funciona en Chrome para Android y en Safari para iPhone.
+1. **En el teléfono (recomendado):** abre https://rosauraaa.github.io/blonk-a-roblox-qr/ (o escanea el QR) y permite el uso de la cámara. Funciona en Chrome para Android y en Safari para iPhone.
 2. Imprime el marcador o ábrelo en otra pantalla y apunta la cámara hacia él.
 3. **En la compu (desarrollo):**
    ```bash

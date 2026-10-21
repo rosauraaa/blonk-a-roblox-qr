@@ -17,7 +17,7 @@
 **Resultado.** Un juego corto y rápido con objetivo, reglas, puntaje y final claros. Cada toque responde con animación, partículas, sonido y vibración. Lo probé en *(teléfono 1)* y *(teléfono 2)* a varias distancias del marcador.
 
 🎥 *(video o GIF aquí)*
-🎮 Juega: https://rosauraaa.github.io/bonk-a-blox-qr/
-💻 Código: https://github.com/rosauraaa/bonk-a-blox-qr
+🎮 Juega: https://rosauraaa.github.io/blonk-a-roblox-qr/
+💻 Código: https://github.com/rosauraaa/blonk-a-roblox-qr
 
 #RealidadAumentada #WebAR #threejs #Blender #MindAR #GameDev
