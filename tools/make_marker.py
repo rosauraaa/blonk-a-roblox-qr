@@ -16,7 +16,7 @@ import qrcode
 from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-URL = sys.argv[1] if len(sys.argv) > 1 else "https://rosaurarosauraaa.github.io/bonk-a-blox-qr/"
+URL = sys.argv[1] if len(sys.argv) > 1 else "https://rosauraaa.github.io/bonk-a-blox-qr/"
 OUT = os.path.join(ROOT, "assets", "marker", "marker.png")
 
 W, H = 1000, 1300
